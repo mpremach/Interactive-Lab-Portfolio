@@ -22,10 +22,8 @@ header {
     transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Rule 1: Hide on short screens */
+/* Rule 1: Hide header on short screens or if zoomed in */
 @media (max-height: 500px) { header { transform: translateY(-150%); } }
-
-/* Rule 2: Hide when Zoomed In */
 body.zoom-mode header { transform: translateY(-150%); }
 
 header nav {
@@ -105,7 +103,7 @@ header a { color: #333; text-decoration: none; margin: 0 10px; font-size: 0.9rem
     }
 }
 
-/* --- SLIDE-IN PANEL (MOBILE: FULL SCREEN BOTTOM SHEET) --- */
+/* SLIDE-IN PANEL (MOBILE: FULL SCREEN) */
 .content-box {
     position: fixed; 
     
@@ -113,7 +111,7 @@ header a { color: #333; text-decoration: none; margin: 0 10px; font-size: 0.9rem
     top: 0; left: 0; right: 0; bottom: 0;
     
     width: 100%; 
-    height: 100dvh; /* Dynamic Height covers address bar area too */
+    height: 100dvh; 
     max-width: none;
     
     background: rgba(0, 0, 0, 0.95); /* Nearly solid black */
@@ -121,7 +119,7 @@ header a { color: #333; text-decoration: none; margin: 0 10px; font-size: 0.9rem
     border: none;
     
     /* Padding */
-    padding: 80px 40px 40px 40px; /* Top padding keeps text below Header area */
+    padding: 80px 40px 40px 40px; 
     box-sizing: border-box;
     text-align: left;
     color: white;
@@ -158,7 +156,7 @@ header a { color: #333; text-decoration: none; margin: 0 10px; font-size: 0.9rem
 .content-box p { font-family: 'Arial', sans-serif; line-height: 1.6; color: #ddd; margin-bottom: 20px; }
 .content-box a { display: inline-block; margin-top: 30px; padding: 15px 30px; background: #00d2ff; color: black; text-decoration: none; font-weight: bold; border-radius: 5px; text-transform: uppercase; }
 
-/* --- FIXED BACK BUTTON --- */
+/* BACK BUTTON */
 .back-btn {
     position: fixed; bottom: 30px; left: 30px;
     padding: 12px 25px;
@@ -173,7 +171,7 @@ header a { color: #333; text-decoration: none; margin: 0 10px; font-size: 0.9rem
 }
 body.zoom-mode .back-btn { opacity: 1; pointer-events: auto; }
 
-/* --- HOTSPOTS --- */
+/* HOTSPOTS */
 #main-hotspots {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
     pointer-events: none;
@@ -188,7 +186,7 @@ body.zoom-mode .back-btn { opacity: 1; pointer-events: auto; }
 .hotspot:hover { transform: translate(-50%, -50%) scale(1.3); }
 .hotspot.hidden { opacity: 0; pointer-events: none; }
 
-/* --- MOBILE TWEAKS --- */
+/* MOBILE TWEAKS */
 @media (max-width: 768px) {
     /* Make Header Smaller on Phones */
     header { padding-top: 10px; }

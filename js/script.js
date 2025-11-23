@@ -5,7 +5,7 @@ function resizeScene() {
     const lensWidth = lens.clientWidth;
     const lensHeight = lens.clientHeight;
     const lensRatio = lensWidth / lensHeight;
-    const imageRatio = 1.54; // Matches your image ratio
+    const imageRatio = 1.54; // Lab Image Aspect Ratio
 
     if (lensRatio > imageRatio) {
         scene.style.width = lensWidth + 'px';
@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const labImage = document.getElementById('lab-image');
     const allHotspots = document.querySelectorAll('.hotspot');
     
-    // REDUNDANCY REMOVED: Select only the one button
     const backBtn = document.querySelector('.back-btn'); 
     
     const navHome = document.getElementById('nav-home');
@@ -72,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
         activateZoom('scene-music', 'zoom-music');
     });
 
-    // REDUNDANCY REMOVED: No loop needed
+
     backBtn.addEventListener('click', resetLab);
     
     navHome.addEventListener('click', resetLab);
