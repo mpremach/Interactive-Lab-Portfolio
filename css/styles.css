@@ -22,7 +22,7 @@ header {
     transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Rule 1: Hide header on short screens or if zoomed in */
+/* Rule: Hide header on short screens or if zoomed in */
 @media (max-height: 500px) { header { transform: translateY(-150%); } }
 body.zoom-mode header { transform: translateY(-150%); }
 
@@ -170,6 +170,20 @@ header a { color: #333; text-decoration: none; margin: 0 10px; font-size: 0.9rem
     transition: opacity 0.3s ease;
 }
 body.zoom-mode .back-btn { opacity: 1; pointer-events: auto; }
+
+/* SIMPLE RESUME BUTTON */
+.resume-btn {
+    display: flex !important;   /* Forces icon and text to sit in a row */
+    align-items: center;        
+    justify-content: center;    
+    gap: 15px;                  
+}
+
+.resume-btn img {
+    width: 30px;                /* Keeps the icon small and neat */
+    height: auto;
+    filter: brightness(0);      /* Optional: Turns icon black to match text */
+}
 
 /* HOTSPOTS */
 #main-hotspots {
